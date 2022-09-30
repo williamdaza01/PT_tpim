@@ -53,14 +53,14 @@ INSERT INTO "Db_Store".roles(name)
 values ('admin'), ('employee');
 
 INSERT into "Db_Store".users(name, last_name, document, role_id)
-values ('Daniela', 'Rodriguez', '112233', 'ad674a74-0d44-445e-b697-7b9103bb705c');
+values ('Daniela', 'Rodriguez', '112233', '1b269196-cd5c-4aff-a014-7b3e88d4f55f');
 
 INSERT into "Db_Store".users(name, last_name, document, role_id)
-values ('Juan', 'Lopez', '114455', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
-       ('Maria', 'Garcia', '344455', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
-       ('Pedro', 'Leon', '388999', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
-       ('Catalina', 'Gonzales', '3222334', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
-       ('Susana', 'Montoya', '1243254', '46c8a124-7a89-4af9-962d-1624c3a063a6');
+values ('Juan', 'Lopez', '114455', 'ee5bf0b7-2642-436c-a730-e3effc64604c'),
+       ('Maria', 'Garcia', '344455', 'ee5bf0b7-2642-436c-a730-e3effc64604c'),
+       ('Pedro', 'Leon', '388999', 'ee5bf0b7-2642-436c-a730-e3effc64604c'),
+       ('Catalina', 'Gonzales', '3222334', 'ee5bf0b7-2642-436c-a730-e3effc64604c'),
+       ('Susana', 'Montoya', '1243254', '1b269196-cd5c-4aff-a014-7b3e88d4f55f');
 
 insert into "Db_Store".products(description, name, price)
 values ('Libra', 'Arroz', 3000),

@@ -108,7 +108,18 @@ const putRole = async (req,res) => {
     res.json("Rol actualizado con exito");
 }
 
+//DELETE
+const deleteSale = async (req,res) => {
+    const id = req.params.id;
+    const response = await pool.query(`delete from "Db_Store".sales where '${id}'`);
+    res.json("venta eliminada con exito");
+}
 
+const deleteUser = async (req,res) => {
+    const id = req.params.id;
+    const response = await pool.query(`delete from "Db_Store".users where '${id}'`);
+    res.json("Usuario eliminado con exito");
+}
 
 module.exports = {
     getSales,
@@ -121,5 +132,7 @@ module.exports = {
     postSales,
     postUser, 
     putRole,
-    putSale
+    putSale,
+    deleteSale,
+    deleteUser
 }

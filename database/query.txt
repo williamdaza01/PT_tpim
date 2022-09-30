@@ -1,0 +1,71 @@
+--Tabla Roles
+create table "Db_Store".roles
+(
+    id   uuid default uuid_generate_v4() not null
+        constraint "k_idRole"
+            primary key,
+    name varchar(30)
+);
+
+--Tabla Products
+create table "Db_Store".products
+(
+    id          uuid default uuid_generate_v4() not null
+        constraint key_name
+            primary key,
+    description varchar(30),
+    name        varchar(30),
+    price       integer
+);
+
+--Tabla Users
+create table "Db_Store".users
+(
+    id        uuid default uuid_generate_v4() not null
+        constraint k_idUser
+            primary key,
+    name      varchar(30),
+    last_name varchar(30),
+    document  varchar(20),
+    role_id   uuid not null
+        constraint "fk_idRole"
+            references "Db_Store".roles (id)
+);
+
+--Tabla Sales
+create table "Db_Store".sales
+(
+    id         uuid default uuid_generate_v4() not null
+        constraint "k_idSale"
+            primary key,
+    qty        integer,
+    sales_at   timestamp,
+    product_id uuid not null
+        constraint fk_products
+            references "Db_Store".products (id),
+    user_id    uuid not null
+        constraint fk_users
+            references "Db_Store".users (id)
+);
+
+--Insercion de datos
+INSERT INTO "Db_Store".roles(name)
+values ('admin'), ('employee');
+
+INSERT into "Db_Store".users(name, last_name, document, role_id)
+values ('Daniela', 'Rodriguez', '112233', 'ad674a74-0d44-445e-b697-7b9103bb705c');
+
+INSERT into "Db_Store".users(name, last_name, document, role_id)
+values ('Juan', 'Lopez', '114455', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
+       ('Maria', 'Garcia', '344455', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
+       ('Pedro', 'Leon', '388999', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
+       ('Catalina', 'Gonzales', '3222334', '46c8a124-7a89-4af9-962d-1624c3a063a6'),
+       ('Susana', 'Montoya', '1243254', '46c8a124-7a89-4af9-962d-1624c3a063a6');
+
+insert into "Db_Store".products(description, name, price)
+values ('Libra', 'Arroz', 3000),
+       ('Libra', 'Papa', 1000),
+       ('500ml', 'Agua sin gas', 2000 ),
+       ('ministro de haciendo aprueba', 'Docena de huevos', 1800);
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

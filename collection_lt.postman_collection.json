@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "f87c5c97-68ec-47b3-8a8a-08a2ea07285a",
+		"name": "collection_lt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19524509"
+	},
+	"item": [
+		{
+			"name": "obtener ventas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/sales/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/products/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener ventas pos dia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/sales/'2022-01-01'/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						"'2022-01-01'",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener ventas por mes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/salesXmonth/'2022-01-01'/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"salesXmonth",
+						"'2022-01-01'",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear rol",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/roles/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"roles",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/sales/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/products/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/'2e8f50b4-8344-43f8-a957-4d64342fc3de'/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"'2e8f50b4-8344-43f8-a957-4d64342fc3de'",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar venta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/sales/''/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						"''",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/'2e8f50b4-8344-43f8-a957-4d64342fc3de'/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"'2e8f50b4-8344-43f8-a957-4d64342fc3de'",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar venta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/sales/''/'1b269196-cd5c-4aff-a014-7b3e88d4f55f'",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sales",
+						"''",
+						"'1b269196-cd5c-4aff-a014-7b3e88d4f55f'"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

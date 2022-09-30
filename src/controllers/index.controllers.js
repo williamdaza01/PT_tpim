@@ -34,9 +34,8 @@ const getSalesDay = async (req,res) => {
 
 const getSalesMonth = async (req,res) => {
     const date = req.params.sales_at;
-    const response = await pool.query(`select count(s.id), date_trunc('month', '${date}') as date
-    from "Db_Store".sales s
-    group by date;`);
+    const response = await pool.query(`select sum(extract('month', '${date}')) as date
+    from "Db_Store".sales s;`);
     res.status(200).json(response.rows);
 }
 

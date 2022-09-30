@@ -40,6 +40,56 @@ const getSalesMonth = async (req,res) => {
     res.status(200).json(response.rows);
 }
 
+//POST
+const postSales = async(req,res) => {
+ //console.log(req);
+    const {qty, sales_at, product_id, user_id} = req.body;
+    console.log(product_id);
+    const response = await pool.query(`INSERT INTO "Db_Store".sales(qty, sales_at, product_id, user_id) 
+                                        VALUES(${qty}, '${sales_at}', '${product_id}', '${user_id}');`);
+    res.json({
+        message: "Venta creada",
+        body: {
+            sale: {qty, sales_at, product_id, user_id}
+        }
+    });
+}
+
+const postProduct = async(req,res) => {
+    const {description, name, price} = req.body;
+    const response = await pool.query(`INSERT INTO "Db_Store".products(description, name, price)
+                                       VALUE('${description}', '${name}', ${price});`);
+    res.json({
+        message: "Producto creado",
+        body:{
+            sale: {description, name, price}
+        }
+    });
+}
+
+const postUser = async(req,res) => {
+    const {name, last_name, document, role_id} = req.body;
+    const response = await pool.query(`INSERT INTO "Db_Store".users(name, last_name, document, role_id)
+                                       VALUE('${name}', '${last_name}', '${document}', '${role_id}');`);
+    res.json({
+        message: "Usuario creado",
+        body:{
+            sale: {name, last_name, document, role_id}
+        }
+    });
+}
+
+const postRole = async(req,res) => {
+    const {name} = req.body;
+    const response = await pool.query(`INSERT INTO "Db_Store".users(name)
+                                       VALUE('${name}');`);
+    res.json({
+        message: "Rol creado",
+        body:{
+            sale: {name}
+        }
+    });
+}
 
 
 module.exports = {
@@ -48,4 +98,8 @@ module.exports = {
     getUsers,
     getSalesDay,
     getSalesMonth,
+    postProduct,
+    postRole,
+    postSales,
+    postUser
 }

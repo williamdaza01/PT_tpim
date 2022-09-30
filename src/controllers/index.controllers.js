@@ -91,6 +91,24 @@ const postRole = async(req,res) => {
     });
 }
 
+//PUT
+const putSale = async (req,res) => {
+    const id = req.params.id;
+    const {qty, sales_at} = req.body;
+    const response = await pool.query(`update "Db_Store".sales set qty = ${qty} , sales_at = '${sales_at}' 
+                                      where id= '${id}'`);
+    res.json("Venta actualizada con exito");
+}
+
+const putRole = async (req,res) => {
+    const id = req.params.id;
+    const {role_id} = req.body;
+    const response = await pool.query(`update "Db_Store".users set role_id = '${role_id}'
+                                      where id= '${id}'`);
+    res.json("Rol actualizado con exito");
+}
+
+
 
 module.exports = {
     getSales,
@@ -101,5 +119,7 @@ module.exports = {
     postProduct,
     postRole,
     postSales,
-    postUser
+    postUser, 
+    putRole,
+    putSale
 }

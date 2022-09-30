@@ -3,7 +3,7 @@ const { Pool } = require("pg");
 const pool = new Pool({
   host: "localhost",
   user: "postgres",
-  password: "lt123456",
+  password: "micontraseña",
   database: "postgres",
   port: 5432,
 });
@@ -25,7 +25,7 @@ const getUsers = async (req, res) => {
 };
 
 const getSalesDay = async (req, res) => {
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const user_id = req.params.roleid;
   const date = req.params.date;
   if (user_id !== role_id) {
@@ -39,7 +39,7 @@ const getSalesDay = async (req, res) => {
 
 const getSalesMonth = async (req, res) => {
   const date = req.params.sales_at;
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const user_id = req.params.roleid;
   if (user_id !== role_id) {
     res.status(401).json("Acceso denegado");
@@ -54,7 +54,7 @@ const getSalesMonth = async (req, res) => {
 //POST
 const postSales = async (req, res) => {
   const { qty, sales_at, product_id, user_id } = req.body;
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== role_id) {
     res.status(401).json("Acceso denegado");
@@ -73,7 +73,7 @@ const postSales = async (req, res) => {
 
 const postProduct = async (req, res) => {
   const { description, name, price } = req.body;
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== role_id) {
     res.status(401).json("Acceso denegado");
@@ -92,7 +92,7 @@ const postProduct = async (req, res) => {
 
 const postUser = async (req, res) => {
   const { name, last_name, document, role_id } = req.body;
-  const roleId = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const roleId = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== roleId) {
     res.status(401).json("Acceso denegado");
@@ -111,7 +111,7 @@ const postUser = async (req, res) => {
 
 const postRole = async (req, res) => {
   const { name } = req.body;
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== role_id) {
     res.status(401).json("Acceso denegado");
@@ -131,7 +131,7 @@ const postRole = async (req, res) => {
 const putSale = async (req, res) => {
   const id = req.params.id;
   const { qty, sales_at } = req.body;
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== role_id) {
     res.status(401).json("Acceso denegado");
@@ -146,7 +146,7 @@ const putSale = async (req, res) => {
 const putRole = async (req, res) => {
   const id = req.params.id;
   const { role_id } = req.body;
-  const roleId = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const roleId = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== roleId) {
     res.status(401).json("Acceso denegado");
@@ -161,7 +161,7 @@ const putRole = async (req, res) => {
 //DELETE
 const deleteSale = async (req, res) => {
   const id = req.params.id;
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== role_id) {
     res.status(401).json("Acceso denegado");
@@ -175,7 +175,7 @@ const deleteSale = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   const id = req.params.id;
-  const role_id = "'ad674a74-0d44-445e-b697-7b9103bb705c'";
+  const role_id = "'1b269196-cd5c-4aff-a014-7b3e88d4f55f'";
   const useridrole = req.params.roleid;
   if (useridrole !== role_id) {
     res.status(401).json("Acceso denegado");
